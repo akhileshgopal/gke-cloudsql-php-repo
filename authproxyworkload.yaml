@@ -1,0 +1,12 @@
+apiVersion: cloudsql.cloud.google.com/v1alpha1
+kind: AuthProxyWorkload
+metadata:
+  name: authproxyworkload-sample
+spec:
+  workloadSelector:
+    kind: "Deployment"
+    name: "php-app"
+  instances:
+  - connectionString: "<INSTANCE_CONNECTION_NAME>"
+    portEnvName: "PMA_PORT"
+    hostEnvName: "PMA_HOST"
