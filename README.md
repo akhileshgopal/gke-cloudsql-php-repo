@@ -1,1 +1,1 @@
-## [phpmyadmin] (https://hub.docker.com/_/phpmyadmin)
+## [phpmyadmin](https://hub.docker.com/_/phpmyadmin)
