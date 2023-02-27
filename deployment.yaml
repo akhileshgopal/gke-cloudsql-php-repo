@@ -1,6 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  annotations:
+        iam.gke.io/gcp-service-account: php-sa@YOUR_PROJECT_ID.iam.gserviceaccount.com
   name: php-app
 spec:
   selector:
@@ -25,18 +27,7 @@ spec:
           value: "set-by-proxy"
         - name: PMA_PORT
           value: "set-by-proxy"
-        - name: PMA_USER
-          valueFrom:
-            secretKeyRef:
-              name: php-secrets
-              key: username
-        - name: PMA_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: php-secrets
-              key: password
         - name: PMA_PMADB
-          valueFrom:
-            secretKeyRef:
-              name: php-secrets
-              key: database
+          value: "phpdb"
+        - name: PMA_USER
+          value: "php-sa"
