@@ -10,3 +10,4 @@ spec:
   - connectionString: "<INSTANCE_CONNECTION_NAME>"
     portEnvName: "PMA_PORT"
     hostEnvName: "PMA_HOST"
+    autoIAMAuthN: true
